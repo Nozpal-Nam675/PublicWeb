@@ -1,176 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Borrow Money</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body, ul, li, p, span, div {
-            color: black !important;
-        h1, h2, h3, h4, h5, h6 {
-            color: #2a4d8f !important;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Loan Request Form</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <span id="service-nav"></span> |
-        <a href="terms.html">Terms</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
-    <h1 id="service-title">Borrowing Money</h1>
-    <div id="borrow-section" style="display:none;">
-        <div style="display: flex; align-items: flex-start;">
-            <img src="./assets/sim1.jpg" alt="Borrowing Money" style="width:240px; height:auto; margin-right:28px; border-radius:12px;" />
-            <div>
-                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
-                <ul style="margin-bottom:15px;">
-                    <li>Maximum Amount: K200</li>
-                    <li>Minimum Amount: K50</li>
-                    <li>Interest Rate: 30%</li>
-                    <li>Duration: Within 2 weeks (Not more than 2 weeks)</li>
-                </ul>
-                <hidden" name="_next" value="https://nozpal-nam675.github.io/PublicWeb//thankyou.html">
-                  <form action="https://laps.onrender.com/submit" method="POST">
-  <input type="hidden" name="_next" value="https://nozpal-nam675.github.io/PublicWeb//thankyou.html">
+  <h2>Borrow Money Form</h2>
 
-  <label>Name:</label><br>
-  <input type="text" name="name" required><br>
+  <form id="borrowForm">
+    <label>ID:</label><br>
+    <input type="text" id="id" readonly><br>
 
-  <label>Amount to borrow:</label><br>
-  <input type="number" name="amount" min="50" max="200" required><br> 
+    <label>Name:</label><br>
+    <input type="text" id="name" required><br>
 
-  <label>Reason:</label><br>
-  <input type="text" name="reason" required><br>
+    <label>Amount to Borrow:</label><br>
+    <input type="number" id="amount" min="50" max="200" required><br>
 
-  <label>Repayment date:</label><br>
-  <input type="date" name="repayment" required><br>
+    <label>Reason:</label><br>
+    <input type="text" id="reason" required><br>
 
-  <label>Phone or Email:</label><br>
-  <input type="text" name="contact" required><br>
+    <label>Repayment Date:</label><br>
+    <input type="date" id="repayment" required><br>
 
-  <label>BSP Account Number:</label><br>
-  <input type="text" name="bsp_account" required><br>
+    <label>Phone or Email:</label><br>
+    <input type="text" id="contact" required><br>
 
-  <label>Date Submitted:</label><br>
-  <span style="font-size:0.9em; color:#555;">(This will be auto-filled)</span><br>
-  <input type="date" name="date_submitted" required><br>
+    <label>BSP Account Number:</label><br>
+    <input type="text" id="bsp_account" required><br><br>
 
-  <input type="submit" value="Submit Request">
-</form>
+    <input type="submit" value="Submit Request">
+  </form>
 
-            </div>
-        </div>
-    <div id="deposit-section" style="display:none;">
-        <div style="display: flex; align-items: flex-start;">
-            <img src="./assets/sim2.jpg" alt="Deposit Cash" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
-            <div>
-                <div style="margin-bottom:10px; font-size:1.08em;">To deposit cash, visit <b>TOA3_Room No: N1</b> or contact me using my details. Your deposit will be processed quickly and securely.</div>
-                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px; font-size:1.1em;">Terms &amp; Conditions</div>
-                <ul style="margin-bottom:15px; list-style-type: disc;">
-                    <li><b>*Maximum Amount:</b> K200</li>
-                    <li><b>*Minimum Amount:</b> K20</li>
-                    <li><b>*Interest Rate:</b> 5%</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div id="withdraw-section" style="display:none;">
-        <div style="display: flex; align-items: flex-start;">
-            <img src="./assets/sim2.jpg" alt="Cash Withdrawal" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
-            <div>
-                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
-                <ul style="margin-bottom:15px;">
-                    <li>Maximum Amount: K200</li>
-                    <li>Minimum Amount: K20</li>
-                    <li>Interest Rate: 5%</li>
-                </ul>
-                <div style="font-weight:bold; text-decoration:underline; margin-bottom:5px;">Target Customers</div>
-                <p>People who have Mobile Banking on their phones. If you have no Mobile Banking then you are an ineligible customer.</p>
-                <p>Come to TOA3_Room No: N1 OR you may contact me via my contact details to do Cash Withdrawal.</p>
-            </div>
-        </div>
-    </div>
-    <div id="flex-section" style="display:none;">
-        <div style="display: flex; align-items: flex-start;">
-            <img src="./assets/con1.jpg" alt="Flex Sales" style="width:180px; height:auto; margin-right:24px; border-radius:10px;" />
-            <div>
-                <div style="font-weight:bold; text-decoration:underline; margin-bottom:10px;">Terms &amp; Conditions</div>
-                <ul style="margin-bottom:15px;">
-                    <li>Minimum: K3 Flex</li>
-                    <li>Maximum: K10 Flex</li>
-                    <li>Interest: K1</li>
-                </ul>
-                <div style="font-weight:bold; margin-bottom:5px;">Flex Types</div>
-                <ul style="margin-bottom:15px;">
-                    <li>Digicel</li>
-                    <li>Vodafone</li>
-                    <li>Telikom</li>
-                </ul>
-                <p>Come to TOA3_N1 OR you may contact me via my contact details. If you are far away you can credit and later give me cash (if you don't have Mobile Banking) or transfer using Mobile Banking to my account.</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Show only the relevant section and update heading and nav based on hash
-        function showSection() {
-            var hash = window.location.hash;
-            var title = document.getElementById('service-title');
-            var nav = document.getElementById('service-nav');
-            if (hash === '' || hash === '#borrow') {
-                title.textContent = 'Borrowing Money';
-                nav.innerHTML = '<a href="borrow.html#borrow" style="font-weight:bold; color:#007bff;">Borrowing Money</a>';
-                document.getElementById('borrow-section').style.display = 'block';
-                document.getElementById('deposit-section').style.display = 'none';
-                document.getElementById('withdraw-section').style.display = 'none';
-                document.getElementById('flex-section').style.display = 'none';
-            } else if (hash === '#deposit') {
-                title.textContent = 'Deposit Cash';
-                nav.innerHTML = '<a href="borrow.html#deposit" style="font-weight:bold; color:#007bff;">Deposit Cash</a>';
-                document.getElementById('borrow-section').style.display = 'none';
-                document.getElementById('deposit-section').style.display = 'block';
-                document.getElementById('withdraw-section').style.display = 'none';
-                document.getElementById('flex-section').style.display = 'none';
-            } else if (hash === '#withdraw') {
-                title.textContent = 'Cash Withdrawal';
-                nav.innerHTML = '<a href="borrow.html#withdraw" style="font-weight:bold; color:#007bff;">Cash Withdrawal</a>';
-                document.getElementById('borrow-section').style.display = 'none';
-                document.getElementById('deposit-section').style.display = 'none';
-                document.getElementById('withdraw-section').style.display = 'block';
-                document.getElementById('flex-section').style.display = 'none';
-            } else if (hash === '#flex') {
-                title.textContent = 'Flex Sales using Top-Up Service';
-                nav.innerHTML = '<a href="borrow.html#flex" style="font-weight:bold; color:#007bff;">Flex Sales using Top-Up Service</a>';
-                document.getElementById('borrow-section').style.display = 'none';
-                document.getElementById('deposit-section').style.display = 'none';
-                document.getElementById('withdraw-section').style.display = 'none';
-                document.getElementById('flex-section').style.display = 'block';
-            }
-        }
-        window.addEventListener('hashchange', showSection);
-        window.addEventListener('DOMContentLoaded', showSection);
-    </script>
-    <script>
-window.onload = function() {
-    // Hide all sections
-    document.getElementById('borrow-section').style.display = 'none';
-    document.getElementById('deposit-section').style.display = 'none';
-    document.getElementById('withdraw-section').style.display = 'none';
-    document.getElementById('flex-section').style.display = 'none';
+  <p id="responseMsg" style="color: green; font-weight: bold;"></p>
 
-    // Show section based on hash
-    var hash = window.location.hash;
-    if (hash === '#borrow' || hash === '') {
-        document.getElementById('borrow-section').style.display = 'block';
-    } else if (hash === '#deposit') {
-        document.getElementById('deposit-section').style.display = 'block';
-    } else if (hash === '#withdraw') {
-        document.getElementById('withdraw-section').style.display = 'block';
-    } else if (hash === '#flex') {
-        document.getElementById('flex-section').style.display = 'block';
-    }
-};
-</script>
-<p>You will be notified shortly if your form is SUCCESSFULLY SUBMITTED.</p>
+  <script>
+    // Generate a simple ID using timestamp
+    const generatedId = "ID" + Date.now();
+    document.getElementById("id").value = generatedId;
+
+    document.getElementById("borrowForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const data = {
+        id: document.getElementById("id").value,
+        name: document.getElementById("name").value,
+        amount: document.getElementById("amount").value,
+        reason: document.getElementById("reason").value,
+        repaymentDate: document.getElementById("repayment").value,
+        contact: document.getElementById("contact").value,
+        bspAccount: document.getElementById("bsp_account").value,
+        dateSubmitted: new Date().toISOString()
+      };
+
+      try {
+        const response = await fetch("https://laps.onrender.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        document.getElementById("responseMsg").textContent = result.message || "Successfully submitted!";
+      } catch (error) {
+        console.error("Submission error:", error);
+        document.getElementById("responseMsg").textContent = "Submission failed. Try again later.";
+      }
+    });
+  </script>
 </body>
-</html>                                                                                                                                         
+</html>
