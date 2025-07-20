@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Loan Request Form</title>
@@ -9,25 +9,25 @@
 
   <form id="borrowForm">
     <label>ID:</label><br>
-    <input type="text" id="id" readonly><br>
+    <input type="text" id="id" name="id" readonly><br>
 
     <label>Name:</label><br>
-    <input type="text" id="name" required><br>
+    <input type="text" id="name" name="name" required><br>
 
     <label>Amount to Borrow:</label><br>
-    <input type="number" id="amount" min="50" max="200" required><br>
+    <input type="number" id="amount" name="amount" min="50" max="200" required><br>
 
     <label>Reason:</label><br>
-    <input type="text" id="reason" required><br>
+    <input type="text" id="reason" name="reason" required><br>
 
     <label>Repayment Date:</label><br>
-    <input type="date" id="repayment" required><br>
+    <input type="date" id="repaymentDate" name="repaymentDate" required><br>
 
     <label>Phone or Email:</label><br>
-    <input type="text" id="contact" required><br>
+    <input type="text" id="contact" name="contact" required><br>
 
     <label>BSP Account Number:</label><br>
-    <input type="text" id="bsp_account" required><br><br>
+    <input type="text" id="bspAccount" name="bspAccount" required><br><br>
 
     <input type="submit" value="Submit Request">
   </form>
@@ -35,7 +35,7 @@
   <p id="responseMsg" style="color: green; font-weight: bold;"></p>
 
   <script>
-    // Generate a simple ID using timestamp
+    // Generate unique ID based on timestamp
     const generatedId = "ID" + Date.now();
     document.getElementById("id").value = generatedId;
 
@@ -45,11 +45,11 @@
       const data = {
         id: document.getElementById("id").value,
         name: document.getElementById("name").value,
-        amount: document.getElementById("amount").value,
+        amount: parseInt(document.getElementById("amount").value),
         reason: document.getElementById("reason").value,
-        repaymentDate: document.getElementById("repayment").value,
+        repaymentDate: document.getElementById("repaymentDate").value,
         contact: document.getElementById("contact").value,
-        bspAccount: document.getElementById("bsp_account").value,
+        bspAccount: document.getElementById("bspAccount").value,
         dateSubmitted: new Date().toISOString()
       };
 
@@ -64,6 +64,7 @@
 
         const result = await response.json();
         document.getElementById("responseMsg").textContent = result.message || "Successfully submitted!";
+        document.getElementById("borrowForm").reset();
       } catch (error) {
         console.error("Submission error:", error);
         document.getElementById("responseMsg").textContent = "Submission failed. Try again later.";
